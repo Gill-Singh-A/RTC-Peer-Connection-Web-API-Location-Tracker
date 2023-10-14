@@ -19,11 +19,17 @@ const getLocation = async(ip) => {
         response.json().then((json) => {
             const output = `
                 ---------------------------------
+                Continent  = ${json.continent_name}
                 Country    = ${json.country_name}
+                Capital    = ${json.country_capital}
                 State      = ${json.state_prov}
                 City       = ${json.city}
                 District   = ${json.district}
                 Lat / Long = ${json.latitude} / ${json.longitude}
+                Time       = ${json.time_zone.current_time}
+                ISP        = ${json.isp}
+                Currency   = ${json.currency.symbol}
+                Phone Code = ${json.calling_code}
                 ---------------------------------
             `
             console.log(ip);
